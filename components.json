@@ -1,0 +1,7 @@
+{
+	"button": "./packages/button/index.js",
+	"button-group": "./packages/button-group/index.js",
+	"scrollbar": "./packages/scrollbar/index.js",
+	"row": "./packages/row/index.js",
+	"backtop": "./packages/backtop/index.js"
+}

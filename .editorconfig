@@ -1,0 +1,7 @@
+root = true
+
+[*]
+tab_width = 4
+indent_style = tab
+spaces_around_operators = true
+charset = utf-8
