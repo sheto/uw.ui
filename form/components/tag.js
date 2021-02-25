@@ -1,4 +1,4 @@
-import { Tag } from '@/uw.ui';
+import { Tag } from '../../tag';
 
 
 function $Add(childArg, mode, argname) {

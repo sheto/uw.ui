@@ -6,7 +6,10 @@
 </template>
 
 <script>
-	import { isExternal } from '@/utils/validate'
+    function $IsExternal(path) {
+        return /^(https?:|mailto:|tel:)/.test(path)
+    }
+
 	export default {
 		name: 'SvgIcon',
 		props: {
@@ -21,7 +24,7 @@
 		},
 		computed: {
 			isExternal() {
-				return isExternal(this.iconClass)
+				return $IsExternal(this.iconClass)
 			},
 			iconName() {
 				return `#icon-${this.iconClass}`

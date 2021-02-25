@@ -1,4 +1,4 @@
-import {Upload} from '@/uw.ui';
+import {Upload} from '../../upload';
 
 
 function $Success(uploadFileInfo, uploadPayload) {
