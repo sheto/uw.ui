@@ -1,4 +1,4 @@
-import { validate } from '../utils'
+import { validator } from '../utils'
 
 export function $assign(_mode = "") {
 	let { options } = this.fields;
@@ -7,7 +7,7 @@ export function $assign(_mode = "") {
 		var copyOptions = JSON.parse(JSON.stringify(options))
 	}else{
 		return []
-	}
+	};
 	if(this.template){
 		preset = JSON.parse(JSON.stringify(this.template && typeof this.template === 'function' ? this.template() : this.template));
 	}
@@ -46,7 +46,7 @@ function $With(_primary,_mode,_preset){
 function $setRules(item) {
 	//假设所有都是必须条件
 	let _rules = []
-	let _presets = validate
+	let _presets = validator
 	//必填项
 	if (!item.required){
 		_rules.push({
@@ -172,8 +172,4 @@ function $PresetAssignAddStatus(_item,_template) {
 	} else {
 		return _template[_item.attr]
 	}
-}
-
-function $rebuildWithPreset(){
-	
 }
