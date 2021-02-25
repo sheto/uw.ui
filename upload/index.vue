@@ -1,9 +1,10 @@
 <script>
 	import Profile from "__dirname/config/profile.info";
+	import { Upload } from "element-ui";
 	export default {
 		render(h) {
 			return h(
-				"el-upload",
+				Upload,
 				{
 					class: "avater-uploader",
 					props: {
@@ -41,9 +42,12 @@
 		computed: {
 			FILE_LIST() {
 				return this.fileList.map((item) => {
-                    let hasRoot = /^\//.test(this.src);
+					let hasRoot = /^\//.test(this.src);
 					return {
-						url: Profile.project.uploadPrefix+`${hasRoot?'':'/'}`+this.src
+						url:
+							Profile.project.uploadPrefix +
+							`${hasRoot ? "" : "/"}` +
+							this.src,
 					};
 				});
 			},
@@ -123,34 +127,35 @@
 		},
 	};
 </script>
-<style lang="scss" scoped>
-.avatar-uploader .el-upload--picture-card {
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
-}
-.avatar-uploader .el-upload-list--picture-card .el-upload-list__item {
-	width: 60px;
-	height: 60px;
-}
-.avatar-uploader .el-upload {
-	border: 1px dashed #d9d9d9;
-	border-radius: 6px;
-	cursor: pointer;
-	position: relative;
-	overflow: hidden;
-}
+<style lang="less" scoped>
+.avatar-uploader {
+	.el-upload--picture-card {
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+	}
+	.el-upload-list--picture-card .el-upload-list__item {
+		width: 60px;
+		height: 60px;
+	}
+	.el-upload {
+		border: 1px dashed #d9d9d9;
+		border-radius: 6px;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+	}
+	.el-upload:hover {
+		border-color: #409eff;
+	}
 
-.avatar-uploader .el-upload:hover {
-	border-color: #409eff;
-}
-
-.avatar-uploader-icon {
-	font-size: 28px;
-	color: #8c939d;
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
-	text-align: center;
+	.avatar-uploader-icon {
+		font-size: 28px;
+		color: #8c939d;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+	}
 }
 </style>

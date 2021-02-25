@@ -5,8 +5,8 @@
 </template>
 <script>
 	export default {
-		name: 'TopBar',
-	}
+		name: "TopBar",
+	};
 </script>
 <style lang="less" scoped>
 .e-search {

@@ -1,4 +1,4 @@
-import {Upload} from '../../upload';
+import {Upload} from '../../index';
 
 
 function $Success(uploadFileInfo, uploadPayload) {

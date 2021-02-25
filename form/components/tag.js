@@ -1,4 +1,4 @@
-import { Tag } from '../../tag';
+import { Tag } from '../../index';
 
 
 function $Add(childArg, mode, argname) {
