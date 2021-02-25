@@ -1,0 +1,11 @@
+{
+    "main": "./index/index.js",
+    "name": "uw.ui",
+    "version": "1.0.0",
+    "description": "基于element的ui封装库",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "sheto",
+    "license": "MIT"
+}
