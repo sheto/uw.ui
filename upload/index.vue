@@ -42,12 +42,12 @@
 		computed: {
 			FILE_LIST() {
 				return this.fileList.map((item) => {
-					let hasRoot = /^\//.test(this.src);
+					let hasRoot = /^\//.test(item.url);
 					return {
 						url:
 							Profile.project.uploadPrefix +
 							`${hasRoot ? "" : "/"}` +
-							item,
+							item.url,
 					};
 				});
 			},
