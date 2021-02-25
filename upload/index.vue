@@ -47,7 +47,7 @@
 						url:
 							Profile.project.uploadPrefix +
 							`${hasRoot ? "" : "/"}` +
-							this.src,
+							item,
 					};
 				});
 			},
