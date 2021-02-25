@@ -1,12 +1,12 @@
 <template>
-	<Image :src="url" />
+	<ElImage :src="url" />
 </template>
 <script>
 	import Profile from "__dirname/config/profile.info";
 	import { Image } from "element-ui";
 	export default {
 		name: "uw-image",
-		components: { Image },
+		components: { ElImage:Image },
 		props: {
 			src: {
 				type: String,

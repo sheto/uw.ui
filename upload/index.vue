@@ -41,8 +41,9 @@
 		computed: {
 			FILE_LIST() {
 				return this.fileList.map((item) => {
+                    let hasRoot = /^\//.test(this.src);
 					return {
-						url: `${Profile.project.uploadPrefix}/${item.url}`,
+						url: Profile.project.uploadPrefix+`${hasRoot?'':'/'}`+this.src
 					};
 				});
 			},
