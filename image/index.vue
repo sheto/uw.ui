@@ -15,7 +15,8 @@
 		},
         computed:{
             url(){
-                return Profile.uploadPrefix+this.src;
+                let hasRoot = /^\//.test(this.src);
+                return Profile.project.uploadPrefix+`${hasRoot?'':'/'}`+this.src;
             }
         }
 	};
