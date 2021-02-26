@@ -1,6 +1,5 @@
 import {Upload} from '../../index';
 
-
 function $Success(uploadFileInfo, uploadPayload) {
 	let _file = this.formInputData[uploadPayload]
 	if (_file) {
@@ -43,7 +42,7 @@ function $Success(uploadFileInfo, uploadPayload) {
 function $Remove(filelist, attr) {
 	this.formInputData[attr] = filelist.map((item) => {
 		return item.url
-	})
+	});
 }
 
 export default function $upload(_preset) {
@@ -55,22 +54,22 @@ export default function $upload(_preset) {
 			}
 		})
 	} else if (typeof template === 'string') {
-		var list = template === '' ? [] : { url: template }
+		var list = template === '' ? [] : [{ url: template }]
 	} else {
 		var list = []
-	}
-	return this.$createElement(Upload, {
-		class: {
-			'e-upload-round': _preset.round,
-		},
-		attrs: {
-			limit: _preset.limit,
-			list: list,
-			payload: _preset.attr,
-		},
-		on: {
-			upload: $Success.bind(this),
-			remove: $Remove.bind(this),
-		},
-	})
+	};
+    return this.$createElement(Upload, {
+        class: {
+            'e-upload-round': _preset.round,
+        },
+        attrs: {
+            limit: _preset.limit,
+            list: list,
+            payload: _preset.attr,
+        },
+        on: {
+            upload: $Success.bind(this),
+            remove: $Remove.bind(this),
+        },
+    })
 }
