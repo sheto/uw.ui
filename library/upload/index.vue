@@ -1,6 +1,6 @@
 <script>
 	import Profile from "__dirname/config/profile.info";
-	import { Upload } from "element-ui";
+	import Upload from "../../upload";
 	export default {
 		render(h) {
 			return h(

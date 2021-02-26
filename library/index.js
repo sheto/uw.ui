@@ -1,16 +1,16 @@
-import TopBar from '../topBar'
-import TopBarItem from '../topBarItem'
-import Counter from '../counter'
-import Dialog from '../dialog'
-import DialogItem from '../dialogItem';
-import Svg from "../svg"
-import Tab from "../tab"
-import Tag from "../tag"
-import Table from "../table/index.vue";
-import Form from "../form";
-import Upload from "../upload";
-import Barbell from "../barbell";
-import Image from "../image";
+import TopBar from './topBar'
+import TopBarItem from './topBarItem'
+import Counter from './counter'
+import Dialog from './dialog'
+import DialogItem from './dialogItem';
+import Svg from "./svg"
+import Tab from "./tab"
+import Tag from "./tag"
+import Table from "./table/index.vue";
+import Form from "./form";
+import Upload from "./upload";
+import Barbell from "./barbell";
+import Image from "./image";
 
 // 获取svg
 import "@/assets/icons/svg";
