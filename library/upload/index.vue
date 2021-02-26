@@ -1,6 +1,6 @@
 <script>
 	import Profile from "__dirname/config/profile.info";
-	import Upload from "../../upload";
+	import Upload from "../../src/upload";
 	export default {
 		render(h) {
 			let props = {

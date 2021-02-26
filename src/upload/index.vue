@@ -2,7 +2,7 @@
 	import UploadList from "./upload-list";
 	import Upload from "./upload";
 	import ElProgress from "../progress";
-	import Migrating from "../../utilis/migrating";
+	import Migrating from "../../utils/migrating";
 
 	function noop() {}
 

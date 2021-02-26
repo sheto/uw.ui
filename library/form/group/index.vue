@@ -9,7 +9,7 @@
 		tag,
 		rate,
 	} from '../components';
-	import { Form,FormItem } from "../src";
+	import { Form,FormItem } from "../../../src/form";
 	// 此组件用于以可关闭tag组件方式展示group的值;
 	import Show from './show'
 	import { $assign } from '../methods'

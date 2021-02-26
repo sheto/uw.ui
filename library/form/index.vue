@@ -1,6 +1,6 @@
 <script>
 	import * as Components from './components'
-	import { Form, FormItem } from './src'
+	import { Form, FormItem } from '../../src/form'
 	import { $assign } from './methods'
 	export default {
 		name: 'Form',
