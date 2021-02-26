@@ -1,5 +1,5 @@
 <template>
-	<transition-group tag="ul" :class="[
+	<ul :class="[
       'el-upload-list',
       'el-upload-list--' + listType,
       { 'is-disabled': disabled }
@@ -18,7 +18,7 @@
           }"></i>
 				</label>
 				<i class="el-icon-close" v-if="!disabled" @click="$emit('remove', file)"></i>
-				<i class="el-icon-close-tip" v-if="!disabled">{{ t('el.upload.deleteTip') }}</i>
+				<i class="el-icon-close-tip" v-if="!disabled">删除成功</i>
 				<!--因为close按钮只在li:focus的时候 display, li blur后就不存在了，所以键盘导航时永远无法 focus到 close按钮上-->
 				<el-progress v-if="file.status === 'uploading'" :type="listType === 'picture-card' ? 'circle' : 'line'" :stroke-width="listType === 'picture-card' ? 6 : 2" :percentage="parsePercentage(file.percentage)">
 				</el-progress>
@@ -32,13 +32,13 @@
 				</span>
 			</slot>
 		</li>
-	</transition-group>
+	</ul>
 </template>
 <script>
 	import ElProgress from "../progress";
 
 	export default {
-		name: 'ElUploadList',
+		name: 'UWUploadList',
 
 		data() {
 			return {

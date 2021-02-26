@@ -7,7 +7,7 @@
 	function noop() {}
 
 	export default {
-		name: "ElUpload",
+		name: "UWUpload",
 
 		mixins: [Migrating],
 

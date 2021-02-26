@@ -7,7 +7,7 @@
 </template>
 <script>
 	export default {
-		name: 'ElUploadDrag',
+		name: 'UWUploadDrag',
 		props: {
 			disabled: Boolean,
 		},
