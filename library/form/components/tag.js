@@ -1,15 +1,5 @@
 import { Tag } from '../../index';
 
-
-function $Add(childArg, mode, argname) {
-	let _arg = this.formInputData[argname]
-	if (mode) {
-		_arg.push(childArg)
-	} else {
-		_arg.splice(_arg.indexOf(childArg), 1)
-	}
-}
-
 export default function $tag(_preset) {
 	return this.$createElement(Tag, {
 		attrs: {
@@ -17,8 +7,12 @@ export default function $tag(_preset) {
 			title: _preset.title,
 		},
 		on: {
-			'ad-tag': (v, m) => {
-				$Add.call(this,[v, m, _preset.attr])
+			adTag: (_value, _mode) => {
+                if (_mode) {
+                    this.formInputData[_preset.attr].push(_value)
+                } else {
+                    this.formInputData[_preset.attr].splice(this.formInputData[_preset.attr].indexOf(_value), 1)
+                }
 			},
 		},
 	})
