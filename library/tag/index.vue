@@ -42,6 +42,9 @@
 									"button-new-tag",
 									{ "button-visible": this.hidden },
 								],
+                                style:{
+                                    marginLeft:this.dynamicTags.length>0?"10px":"0px"
+                                },
 								attrs: {
 									size: "small",
 								},
@@ -105,11 +108,10 @@
 	};
 </script>
 <style scoped>
-.el-tag + .el-tag {
+.uw-tag + .uw-tag {
 	margin-left: 10px;
 }
 .button-new-tag {
-	margin-left: 10px;
 	height: 32px;
 	line-height: 30px;
 	padding-top: 0;
