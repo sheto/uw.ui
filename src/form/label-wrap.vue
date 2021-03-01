@@ -5,13 +5,13 @@
 			updateAll: Boolean,
 		},
 
-		inject: ['elForm', 'elFormItem'],
+		inject: ['uwForm', 'uwFormItem'],
 
 		render() {
 			const slots = this.$slots.default
 			if (!slots) return null
 			if (this.isAutoWidth) {
-				const autoLabelWidth = this.elForm.autoLabelWidth
+				const autoLabelWidth = this.uwForm.autoLabelWidth
 				const style = {}
 				if (autoLabelWidth && autoLabelWidth !== 'auto') {
 					const marginLeft =
@@ -50,7 +50,7 @@
 					if (action === 'update') {
 						this.computedWidth = this.getLabelWidth()
 					} else if (action === 'remove') {
-						this.elForm.deregisterLabelWidth(this.computedWidth)
+						this.uwForm.deregisterLabelWidth(this.computedWidth)
 					}
 				}
 			},
@@ -59,8 +59,8 @@
 		watch: {
 			computedWidth(val, oldVal) {
 				if (this.updateAll) {
-					this.elForm.registerLabelWidth(val, oldVal)
-					this.elFormItem.updateComputedLabelWidth(val)
+					this.uwForm.registerLabelWidth(val, oldVal)
+					this.uwFormItem.updateComputedLabelWidth(val)
 				}
 			},
 		},

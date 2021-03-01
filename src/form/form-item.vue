@@ -1,11 +1,11 @@
 <template>
 	<div class="uw-form-item" :class="[{
-      'uw-form-item--feedback': elForm && elForm.statusIcon,
+      'uw-form-item--feedback': uwForm && uwForm.statusIcon,
       'is-error': validateState === 'error',
       'is-validating': validateState === 'validating',
       'is-success': validateState === 'success',
       'is-required': isRequired || required,
-      'is-no-asterisk': elForm && elForm.hideRequiredAsterisk
+      'is-no-asterisk': uwForm && uwForm.hideRequiredAsterisk
     },
     sizeClass ? 'uw-form-item--' + sizeClass : ''
   ]">
@@ -21,7 +21,7 @@
 					<div class="uw-form-item__error" :class="{
               'uw-form-item__error--inline': typeof inlineMessage === 'boolean'
                 ? inlineMessage
-                : (elForm && elForm.inlineMessage || false)
+                : (uwForm && uwForm.inlineMessage || false)
             }">
 						{{validateMessage}}
 					</div>
@@ -37,19 +37,19 @@
 	import { noop, getPropByPath } from '../../utils/util'
 	import LabelWrap from './label-wrap.vue'
 	export default {
-		name: 'ElFormItem',
+		name: 'UWFormItem',
 
-		componentName: 'ElFormItem',
+		componentName: 'UWFormItem',
 
 		mixins: [emitter],
 
 		provide() {
 			return {
-				elFormItem: this,
+				uwFormItem: this,
 			}
 		},
 
-		inject: ['elForm'],
+		inject: ['uwForm'],
 
 		props: {
 			label: String,
@@ -113,7 +113,7 @@
 					if (this.labelWidth === 'auto') {
 						ret.marginLeft = this.computedLabelWidth
 					} else if (this.form.labelWidth === 'auto') {
-						ret.marginLeft = this.elForm.autoLabelWidth
+						ret.marginLeft = this.uwForm.autoLabelWidth
 					}
 				} else {
 					ret.marginLeft = labelWidth
@@ -123,8 +123,8 @@
 			form() {
 				let parent = this.$parent
 				let parentName = parent.$options.componentName
-				while (parentName !== 'ElForm') {
-					if (parentName === 'ElFormItem') {
+				while (parentName !== 'UWForm') {
+					if (parentName === 'UWFormItem') {
 						this.isNested = true
 					}
 					parent = parent.$parent
@@ -161,13 +161,13 @@
 				return isRequired
 			},
 			_formSize() {
-				return this.elForm.size
+				return this.uwForm.size
 			},
-			elFormItemSize() {
+			uwFormItemSize() {
 				return this.size || this._formSize
 			},
 			sizeClass() {
-				return this.elFormItemSize || (this.$ELEMENT || {}).size
+				return this.uwFormItemSize || (this.$ELEMENT || {}).size
 			},
 		},
 		data() {
@@ -212,8 +212,8 @@
 						this.validateMessage = errors ? errors[0].message : ''
 
 						callback(this.validateMessage, invalidFields)
-						this.elForm &&
-							this.elForm.$emit(
+						this.uwForm &&
+							this.uwForm.$emit(
 								'validate',
 								this.prop,
 								!errors,

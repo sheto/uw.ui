@@ -10,13 +10,13 @@
 	import objectAssign from '../../utils/merge'
 
 	export default {
-		name: 'ElForm',
+		name: 'UWForm',
 
-		componentName: 'ElForm',
+		componentName: 'UWForm',
 
 		provide() {
 			return {
-				elForm: this,
+				uwForm: this,
 			}
 		},
 
