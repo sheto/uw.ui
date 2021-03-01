@@ -30,8 +30,8 @@
 							ref: "saveTagInput",
 							on: {
 								blur: this.handleInputConfirm,
-								input: (v) => {
-									this.inputValue = v;
+								input: (_value) => {
+									this.inputValue = _value;
 								},
 							},
 					  })
@@ -95,7 +95,7 @@
 			handleInputConfirm() {
 				let inputValue = this.inputValue;
 				if (inputValue) {
-					this.$emit("ad-tag", inputValue, true);
+					this.$emit("add", inputValue, true);
 					this.copy.push(inputValue);
 				}
 				this.inputVisible = false;

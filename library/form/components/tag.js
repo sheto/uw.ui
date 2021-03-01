@@ -7,7 +7,7 @@ export default function $tag(_preset) {
 			title: _preset.title,
 		},
 		on: {
-			adTag: (_value, _mode) => {
+			add: (_value, _mode) => {
                 if (_mode) {
                     this.formInputData[_preset.attr].push(_value)
                 } else {
