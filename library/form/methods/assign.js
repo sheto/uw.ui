@@ -9,6 +9,13 @@ export function $assign(_mode = "") {
 		return []
 	};
 	if(this.template){
+        // 如果有值就触发一次完成事件，已解决多tab的值修改问题
+        if(Object.keys(this.template).length>0){
+            this.$emit(
+                'leave',
+                JSON.parse(JSON.stringify(this.template))
+            )
+        }
 		preset = JSON.parse(JSON.stringify(this.template && typeof this.template === 'function' ? this.template() : this.template));
 	}
 	let mode = this.mode
